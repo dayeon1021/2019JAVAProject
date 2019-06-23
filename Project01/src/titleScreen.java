@@ -15,12 +15,13 @@ public class titleScreen {
 		
 		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
 		frame.setLayout(titlebox);
-		ImageIcon logo = new ImageIcon("src/images/영웅이에유로고.PNG");
-		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(600, 350, Image.SCALE_DEFAULT));
+		ImageIcon logo = new 
+				ImageIcon("src/images/영웅이에유로고.PNG");
+		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(700, 350, Image.SCALE_DEFAULT));
 		JLabel logoimage=new JLabel(slogo);
 		
 		ImageIcon startIcon = new ImageIcon("src/images/게임시작.png");
-		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(320, 150, Image.SCALE_DEFAULT));
 		JButton bt1=new JButton(sstartIcon);
 		//bt1.setFont(new Font("맑은고딕", Font.BOLD , 30));
 		bt1.setBorderPainted(false); bt1.setFocusPainted(false); bt1.setContentAreaFilled(false); 
@@ -44,24 +45,28 @@ public class titleScreen {
 		quitButton.setBorderPainted(false); quitButton.setFocusPainted(false); quitButton.setContentAreaFilled(false); 
 		
 		
-
-	
 		//ActionListener (개발자 소개)
 		JPanel MainContainer = new JPanel();
-       // setContentPane(MainContainer);        
-		bt3.addActionListener(new ActionListener() {
-            // 만들어진 버튼 "새 창 띄우기"에 버튼이 눌러지면 발생하는 행동을 정의
+        //setContentPane(MainContainer);        
+		bt3.addActionListener(new ActionListener() { // 만들어진 버튼 "개발자소개"에 버튼이 눌러지면 발생하는 행동을 정의
             @Override
             public void actionPerformed(ActionEvent e) {
             	new newWindow(); // 클래스 newWindow를 새로 만들어낸다
             }
             
         });
-        
         MainContainer.add(bt3);
 
+        //ActionListener (게임 방법)
+        JPanel howPanel = new JPanel();
+        //setContentPane(howPanel); 
+        bt2.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) {
+            	new newGameRules();
 
-
+			}					
+		});
+        
 		//ActionListener (게임 종료)
 		ActionListener listener3 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -84,6 +89,8 @@ public class titleScreen {
 
 	}
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class newWindow extends JFrame {
     // 버튼이 눌러지면 만들어지는 새 창을 정의한 클래스
     newWindow() {

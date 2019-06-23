@@ -1,0 +1,27 @@
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+// 버튼이 눌러지면 만들어지는 새 창을 정의한 클래스
+class newGameRules extends JFrame {
+	newGameRules() {
+		JFrame ruleframe = new JFrame("게임 방법");
+		ruleframe.setLocation(400, 100);//창 위치
+		//ruleframe.setPreferredSize(new Dimension(1200,2000)); //주로 이걸 사용
+		ruleframe.setPreferredSize(new Dimension(1000,600));
+		// 주의, 여기서 setDefaultCloseOperation() 정의를 하지 말아야 한다
+        // 정의하게 되면 새 창을 닫으면 모든 창과 프로그램이 동시에 꺼진다
+        
+        JPanel panel= new JPanel(); setContentPane(panel);
+        
+        JLabel NewLabel = new JLabel("게임규칙 설명 어쩌구 저쩌구");
+        
+        panel.add(NewLabel);
+        
+        setSize(300,100);
+        setResizable(false);
+        setVisible(true);
+    }
+}

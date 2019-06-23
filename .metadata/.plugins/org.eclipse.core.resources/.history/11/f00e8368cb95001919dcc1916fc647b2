@@ -1,0 +1,40 @@
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+
+// 버튼이 눌러지면 만들어지는 새 창을 정의한 클래스
+class newGameRules extends JFrame {
+	public static void main(String[] args) {
+		
+	}
+	newGameRules() {
+		//JFrame ruleframe = new JFrame("게임 방법");
+		//ruleframe.setLocation(400, 100);//창 위치
+		//ruleframe.setPreferredSize(new Dimension(1000,600));
+		// 주의, 여기서 setDefaultCloseOperation() 정의를 하지 말아야 한다
+        // 정의하게 되면 새 창을 닫으면 모든 창과 프로그램이 동시에 꺼진다
+        setTitle("게임방법");
+        
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setSize(480,640);
+		
+		
+        JPanel panel= new JPanel(); setContentPane(panel);
+        
+        ImageIcon ruleIcon = new ImageIcon("src/images/게임설명크게.png");
+		ImageIcon sruleIcon = new ImageIcon(ruleIcon.getImage().getScaledInstance(720, 416, Image.SCALE_DEFAULT));
+        JLabel ruleLabel = new JLabel(ruleIcon);
+        
+        panel.add(ruleLabel);
+        
+        setSize(720,416);
+        setResizable(false);
+        setVisible(true);
+    }
+}
