@@ -8,28 +8,36 @@ public class titleScreen {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("창이름");
-		frame.setLocation(400, 100);//창 위치
-		frame.setPreferredSize(new Dimension(1200,800)); //주로 이걸 사용
-			
+		//frame.setLocation(400, 100);//창 위치
+		//frame.setPreferredSize(new Dimension(1200,800)); //주로 이걸 사용
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setUndecorated(true);
+		
 		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
 		frame.setLayout(titlebox);
-		ImageIcon logo = new ImageIcon("src/images/로고.PNG");
+		ImageIcon logo = new ImageIcon("src/images/영웅이에유로고.PNG");
 		JLabel logoimage=new JLabel(logo);
-		JButton bt1=new JButton("게임 시작");
-		bt1.setFont(new Font("맑은고딕", Font.BOLD , 30));
-		JButton bt2=new JButton("게임방법");
-		bt2.setFont(new Font("맑은고딕", Font.BOLD, 30));
-		JButton quitButton=new JButton("게임종료");
-		quitButton.setFont(new Font("맑은고딕", Font.BOLD, 30));
-		JButton bt4=new JButton("개발자 소개");
-		bt4.setFont(new Font("맑은고딕", Font.BOLD, 30));
-		//panel.setHorizontalAlignment(JLabel.CENTER);	//가운데 정렬
+		
+		JButton bt1=new JButton(new ImageIcon("src/images/게임시작.png"));
+		//bt1.setFont(new Font("맑은고딕", Font.BOLD , 30));
+		bt1.setBorderPainted(false); bt1.setFocusPainted(false); bt1.setContentAreaFilled(false); 
+		JButton bt2=new JButton(new ImageIcon("src/images/게임방법.png"));
+		//bt2.setFont(new Font("맑은고딕", Font.BOLD, 30));
+		bt2.setBorderPainted(false); bt2.setFocusPainted(false); bt2.setContentAreaFilled(false); 
+		JButton bt3=new JButton(new ImageIcon("src/images/개발자소개.png"));
+		//bt4.setFont(new Font("맑은고딕", Font.BOLD, 30));
+		bt3.setBorderPainted(false); bt3.setFocusPainted(false); bt3.setContentAreaFilled(false); 
+		JButton quitButton=new JButton(new ImageIcon("src/images/게임종료.png"));
+		//quitButton.setFont(new Font("맑은고딕", Font.BOLD, 30));
+		quitButton.setBorderPainted(false); quitButton.setFocusPainted(false); quitButton.setContentAreaFilled(false); 
+		
+		
 
 	
 		//ActionListener (개발자 소개)
 		JPanel MainContainer = new JPanel();
        // setContentPane(MainContainer);        
-		bt4.addActionListener(new ActionListener() {
+		bt3.addActionListener(new ActionListener() {
             // 만들어진 버튼 "새 창 띄우기"에 버튼이 눌러지면 발생하는 행동을 정의
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,7 +46,7 @@ public class titleScreen {
             
         });
         
-        MainContainer.add(bt4);
+        MainContainer.add(bt3);
 
 
 
@@ -54,8 +62,9 @@ public class titleScreen {
 		frame.add(logoimage);
 		frame.add(bt1);
 		frame.add(bt2);
+		frame.add(bt3);
 		frame.add(quitButton);
-		frame.add(bt4);
+	
 		
 		frame.pack(); //감싸다
 		frame.setVisible(true); //보여줘라
