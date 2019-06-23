@@ -16,29 +16,29 @@ public class titleScreen {
 		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
 		frame.setLayout(titlebox);
 		ImageIcon logo = new ImageIcon("src/images/øµøı¿Ãø°¿Ø∑Œ∞Ì.PNG");
-		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(600, 350, Image.SCALE_DEFAULT));
+		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(500, 300, Image.SCALE_DEFAULT));
 		JLabel logoimage=new JLabel(slogo);
 		
 		ImageIcon startIcon = new ImageIcon("src/images/∞‘¿”Ω√¿€.png");
-		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(250, 150, Image.SCALE_DEFAULT));
 		JButton bt1=new JButton(sstartIcon);
 		//bt1.setFont(new Font("∏º¿∫∞ÌµÒ", Font.BOLD , 30));
 		bt1.setBorderPainted(false); bt1.setFocusPainted(false); bt1.setContentAreaFilled(false); 
 
 		ImageIcon howIcon = new ImageIcon("src/images/∞‘¿”πÊπ˝.png");
-		ImageIcon showIcon = new ImageIcon(howIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		ImageIcon showIcon = new ImageIcon(howIcon.getImage().getScaledInstance(250, 150, Image.SCALE_DEFAULT));
 		JButton bt2=new JButton(showIcon);
 		//bt2.setFont(new Font("∏º¿∫∞ÌµÒ", Font.BOLD, 30));
 		bt2.setBorderPainted(false); bt2.setFocusPainted(false); bt2.setContentAreaFilled(false); 
 		
 		ImageIcon intreIcon = new ImageIcon("src/images/∞≥πﬂ¿⁄º“∞≥.png");
-		ImageIcon sintreIcon = new ImageIcon(intreIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		ImageIcon sintreIcon = new ImageIcon(intreIcon.getImage().getScaledInstance(250, 150, Image.SCALE_DEFAULT));
 		JButton bt3=new JButton(sintreIcon);
 		//bt4.setFont(new Font("∏º¿∫∞ÌµÒ", Font.BOLD, 30));
 		bt3.setBorderPainted(false); bt3.setFocusPainted(false); bt3.setContentAreaFilled(false); 
 		
 		ImageIcon quitIcon = new ImageIcon("src/images/∞‘¿”¡æ∑·.png");
-		ImageIcon squitIcon = new ImageIcon(quitIcon.getImage().getScaledInstance(300, 150, Image.SCALE_DEFAULT));
+		ImageIcon squitIcon = new ImageIcon(quitIcon.getImage().getScaledInstance(250, 150, Image.SCALE_DEFAULT));
 		JButton quitButton=new JButton(squitIcon);
 		//quitButton.setFont(new Font("∏º¿∫∞ÌµÒ", Font.BOLD, 30));
 		quitButton.setBorderPainted(false); quitButton.setFocusPainted(false); quitButton.setContentAreaFilled(false); 

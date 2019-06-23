@@ -16,7 +16,7 @@ public class titleScreen {
 		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
 		frame.setLayout(titlebox);
 		ImageIcon logo = new ImageIcon("src/images/영웅이에유로고.PNG");
-		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(600, 350, Image.SCALE_DEFAULT));
+		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(400, 300, Image.SCALE_DEFAULT));
 		JLabel logoimage=new JLabel(slogo);
 		
 		ImageIcon startIcon = new ImageIcon("src/images/게임시작.png");

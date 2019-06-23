@@ -16,30 +16,23 @@ public class titleScreen {
 		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
 		frame.setLayout(titlebox);
 		ImageIcon logo = new ImageIcon("src/images/영웅이에유로고.PNG");
-		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(600, 350, Image.SCALE_DEFAULT));
+		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(400, 200, Image.SCALE_DEFAULT));
 		JLabel logoimage=new JLabel(slogo);
 		
 		ImageIcon startIcon = new ImageIcon("src/images/게임시작.png");
-		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(100, 50, Image.SCALE_DEFAULT));
 		JButton bt1=new JButton(sstartIcon);
 		//bt1.setFont(new Font("맑은고딕", Font.BOLD , 30));
 		bt1.setBorderPainted(false); bt1.setFocusPainted(false); bt1.setContentAreaFilled(false); 
+		//bt1.setSize(30,10);
 
-		ImageIcon howIcon = new ImageIcon("src/images/게임방법.png");
-		ImageIcon showIcon = new ImageIcon(howIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
-		JButton bt2=new JButton(showIcon);
+		JButton bt2=new JButton(new ImageIcon("src/images/게임방법.png"));
 		//bt2.setFont(new Font("맑은고딕", Font.BOLD, 30));
 		bt2.setBorderPainted(false); bt2.setFocusPainted(false); bt2.setContentAreaFilled(false); 
-		
-		ImageIcon intreIcon = new ImageIcon("src/images/개발자소개.png");
-		ImageIcon sintreIcon = new ImageIcon(intreIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
-		JButton bt3=new JButton(sintreIcon);
+		JButton bt3=new JButton(new ImageIcon("src/images/개발자소개.png"));
 		//bt4.setFont(new Font("맑은고딕", Font.BOLD, 30));
 		bt3.setBorderPainted(false); bt3.setFocusPainted(false); bt3.setContentAreaFilled(false); 
-		
-		ImageIcon quitIcon = new ImageIcon("src/images/게임종료.png");
-		ImageIcon squitIcon = new ImageIcon(quitIcon.getImage().getScaledInstance(300, 150, Image.SCALE_DEFAULT));
-		JButton quitButton=new JButton(squitIcon);
+		JButton quitButton=new JButton(new ImageIcon("src/images/게임종료.png"));
 		//quitButton.setFont(new Font("맑은고딕", Font.BOLD, 30));
 		quitButton.setBorderPainted(false); quitButton.setFocusPainted(false); quitButton.setContentAreaFilled(false); 
 		
