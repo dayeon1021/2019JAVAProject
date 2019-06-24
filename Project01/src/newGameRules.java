@@ -14,16 +14,14 @@ class newGameRules extends JFrame {
 		
 	}
 	newGameRules() {
-		//JFrame ruleframe = new JFrame("게임 방법");
+		JFrame ruleframe = new JFrame("게임 방법");
 		//ruleframe.setLocation(400, 100);//창 위치
 		//ruleframe.setPreferredSize(new Dimension(1000,600));
 		// 주의, 여기서 setDefaultCloseOperation() 정의를 하지 말아야 한다
-        // 정의하게 되면 새 창을 닫으면 모든 창과 프로그램이 동시에 꺼진다
-        setTitle("게임방법");
-        
-        JLayeredPane layeredPane = new JLayeredPane();
-        layeredPane.setSize(480,640);
-		
+        // 정의하게 되면 새 창을 닫으면 모든 창과 프로그램이 동시에 꺼진다 
+       // JLayeredPane layeredPane = new JLayeredPane();
+       // layeredPane.setSize(480,640);
+		 setTitle("게임방법");
 		
         JPanel panel= new JPanel(); setContentPane(panel);
         
@@ -32,7 +30,7 @@ class newGameRules extends JFrame {
         JLabel ruleLabel = new JLabel(sruleIcon);
         
         panel.add(ruleLabel);
-        
+        setLocation(200, 100);
         setSize(1500, 850);
         setResizable(false);
         setVisible(true);

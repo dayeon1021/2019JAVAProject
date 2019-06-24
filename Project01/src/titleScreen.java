@@ -15,35 +15,41 @@ public class titleScreen {
 		
 		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
 		frame.setLayout(titlebox);
-		ImageIcon logo = new 
-				ImageIcon("src/images/영웅이에유로고.PNG");
+		ImageIcon logo = new ImageIcon("src/images/영웅이에유로고.PNG");
 		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(700, 350, Image.SCALE_DEFAULT));
 		JLabel logoimage=new JLabel(slogo);
+		logoimage.setLayout(null);
+		logoimage.setBounds(600, 10, 700, 350);
 		
+		JPanel icon =new JPanel();
+		icon.setLayout(null);
 		ImageIcon startIcon = new ImageIcon("src/images/게임시작.png");
 		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(320, 150, Image.SCALE_DEFAULT));
 		JButton bt1=new JButton(sstartIcon);
-		//bt1.setFont(new Font("맑은고딕", Font.BOLD , 30));
 		bt1.setBorderPainted(false); bt1.setFocusPainted(false); bt1.setContentAreaFilled(false); 
-
+		bt1.setBounds(780, 400, 320, 150);
+		
+		
 		ImageIcon howIcon = new ImageIcon("src/images/게임방법.png");
 		ImageIcon showIcon = new ImageIcon(howIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
 		JButton bt2=new JButton(showIcon);
 		//bt2.setFont(new Font("맑은고딕", Font.BOLD, 30));
-		bt2.setBorderPainted(false); bt2.setFocusPainted(false); bt2.setContentAreaFilled(false); 
+		bt2.setBorderPainted(false); bt2.setFocusPainted(false); bt2.setContentAreaFilled(false);
+		bt2.setBounds(780, 550, 320, 150);
 		
 		ImageIcon intreIcon = new ImageIcon("src/images/개발자소개.png");
 		ImageIcon sintreIcon = new ImageIcon(intreIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
 		JButton bt3=new JButton(sintreIcon);
 		//bt4.setFont(new Font("맑은고딕", Font.BOLD, 30));
 		bt3.setBorderPainted(false); bt3.setFocusPainted(false); bt3.setContentAreaFilled(false); 
+		bt3.setBounds(780, 700, 320, 150);
 		
 		ImageIcon quitIcon = new ImageIcon("src/images/게임종료.png");
 		ImageIcon squitIcon = new ImageIcon(quitIcon.getImage().getScaledInstance(300, 150, Image.SCALE_DEFAULT));
 		JButton quitButton=new JButton(squitIcon);
 		//quitButton.setFont(new Font("맑은고딕", Font.BOLD, 30));
 		quitButton.setBorderPainted(false); quitButton.setFocusPainted(false); quitButton.setContentAreaFilled(false); 
-		
+		quitButton.setBounds(780, 850, 320, 150);
 		
 		//ActionListener (개발자 소개)
 		JPanel MainContainer = new JPanel();
@@ -57,10 +63,12 @@ public class titleScreen {
         });
         MainContainer.add(bt3);
 
+        
         //ActionListener (게임 방법)
         JPanel howPanel = new JPanel();
         //setContentPane(howPanel); 
-        bt2.addActionListener(new ActionListener() { 
+        bt2.addActionListener(new ActionListener(
+        		) { 
 			public void actionPerformed(ActionEvent e) {
             	new newGameRules();
 
@@ -75,13 +83,12 @@ public class titleScreen {
 		};
 		quitButton.addActionListener(listener3);
 	
-		
-		frame.add(logoimage);
-		frame.add(bt1);
-		frame.add(bt2);
-		frame.add(bt3);
-		frame.add(quitButton);
-	
+		icon.add(logoimage);
+		icon.add(bt1);
+		icon.add(bt2);
+		icon.add(bt3);
+		icon.add(quitButton);
+		frame.add(icon);
 		
 		frame.pack(); //감싸다
 		frame.setVisible(true); //보여줘라
@@ -104,8 +111,6 @@ class newWindow extends JFrame {
         setContentPane(NewWindowContainer);
         
         JLabel NewLabel = new JLabel("새 창을 띄우는데 성공!");
-        
-        
         
         NewWindowContainer.add(NewLabel);
         

@@ -1,0 +1,120 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class titleScreen {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("창이름");
+		//frame.setLocation(400, 100);//창 위치
+		//frame.setPreferredSize(new Dimension(1200,800)); //주로 이걸 사용
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setUndecorated(true);
+		
+		BoxLayout titlebox=new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS);
+		frame.setLayout(titlebox);
+		ImageIcon logo = new ImageIcon("src/images/영웅이에유로고.PNG");
+		ImageIcon slogo = new ImageIcon(logo.getImage().getScaledInstance(700, 350, Image.SCALE_DEFAULT));
+		JLabel logoimage=new JLabel(slogo);
+		logoimage.setLayout(null);
+		//logoimage.setBounds(1000, 300, 320, 150);
+		
+		JLabel icon =new JLabel();
+		ImageIcon startIcon = new ImageIcon("src/images/게임시작.png");
+		ImageIcon sstartIcon = new ImageIcon(startIcon.getImage().getScaledInstance(320, 150, Image.SCALE_DEFAULT));
+		JButton bt1=new JButton(sstartIcon);
+		bt1.setBorderPainted(false); bt1.setFocusPainted(false); bt1.setContentAreaFilled(false); 
+		bt1.setLayout(null);
+		bt1.setBounds(1000, 300, 320, 150);
+		
+		
+		ImageIcon howIcon = new ImageIcon("src/images/게임방법.png");
+		ImageIcon showIcon = new ImageIcon(howIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		JButton bt2=new JButton(showIcon);
+		//bt2.setFont(new Font("맑은고딕", Font.BOLD, 30));
+		bt2.setBorderPainted(false); bt2.setFocusPainted(false); bt2.setContentAreaFilled(false); 
+		
+		ImageIcon intreIcon = new ImageIcon("src/images/개발자소개.png");
+		ImageIcon sintreIcon = new ImageIcon(intreIcon.getImage().getScaledInstance(315, 150, Image.SCALE_DEFAULT));
+		JButton bt3=new JButton(sintreIcon);
+		//bt4.setFont(new Font("맑은고딕", Font.BOLD, 30));
+		bt3.setBorderPainted(false); bt3.setFocusPainted(false); bt3.setContentAreaFilled(false); 
+		
+		ImageIcon quitIcon = new ImageIcon("src/images/게임종료.png");
+		ImageIcon squitIcon = new ImageIcon(quitIcon.getImage().getScaledInstance(300, 150, Image.SCALE_DEFAULT));
+		JButton quitButton=new JButton(squitIcon);
+		//quitButton.setFont(new Font("맑은고딕", Font.BOLD, 30));
+		quitButton.setBorderPainted(false); quitButton.setFocusPainted(false); quitButton.setContentAreaFilled(false); 
+		
+		
+		//ActionListener (개발자 소개)
+		JPanel MainContainer = new JPanel();
+        //setContentPane(MainContainer);        
+		bt3.addActionListener(new ActionListener() { // 만들어진 버튼 "개발자소개"에 버튼이 눌러지면 발생하는 행동을 정의
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	new newWindow(); // 클래스 newWindow를 새로 만들어낸다
+            }
+            
+        });
+        MainContainer.add(bt3);
+
+        //ActionListener (게임 방법)
+        JPanel howPanel = new JPanel();
+        //setContentPane(howPanel); 
+        bt2.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) {
+            	new newGameRules();
+
+			}					
+		});
+        
+		//ActionListener (게임 종료)
+		ActionListener listener3 = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}					
+		};
+		quitButton.addActionListener(listener3);
+	
+		
+		frame.add(logoimage);
+		icon.add(bt1);
+		frame.add(bt2);
+		frame.add(bt3);
+		frame.add(quitButton);
+	
+		
+		frame.pack(); //감싸다
+		frame.setVisible(true); //보여줘라
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close하는 순간 종료
+
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class newWindow extends JFrame {
+    // 버튼이 눌러지면 만들어지는 새 창을 정의한 클래스
+    newWindow() {
+		JFrame dframe = new JFrame("개발자 소개");
+		dframe.setLocation(400, 100);//창 위치
+		dframe.setPreferredSize(new Dimension(1200,800)); //주로 이걸 사용
+        // 주의, 여기서 setDefaultCloseOperation() 정의를 하지 말아야 한다
+        // 정의하게 되면 새 창을 닫으면 모든 창과 프로그램이 동시에 꺼진다
+        
+        JPanel NewWindowContainer = new JPanel();
+        setContentPane(NewWindowContainer);
+        
+        JLabel NewLabel = new JLabel("새 창을 띄우는데 성공!");
+        
+        
+        
+        NewWindowContainer.add(NewLabel);
+        
+        setSize(300,100);
+        setResizable(false);
+        setVisible(true);
+    }
+}
